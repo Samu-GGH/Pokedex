@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
-  <body class="relative flex justify-evenly w-full p-5 bg-teal-300">
+  <body class="relative flex justify-evenly w-full bg-teal-300 flex-wrap">
+    <header
+      class="header relative flex justify-evenly place-items-center h-24 w-full p-5 bg-gray-200 border-2 border-gray-400"
+    >
+      <div class="title text-center font-bold text-4xl italic">POKEDEX</div>
+    </header>
     <div
       class="contenedor inline-grid relative w-full grid-cols-3 grid-flow-row auto-rows-[306px] gap-5 py-5 px-2"
     ></div>

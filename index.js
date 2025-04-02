@@ -1,5 +1,5 @@
 var container = document.querySelector(".contenedor");
-const pokemones = 300;
+const pokemones = 920;
 
 const llamarApi = (id, pokeImg, num) => {
   let pokemon = document.querySelectorAll(".pokemon")[num];
@@ -17,7 +17,7 @@ const llamarApi = (id, pokeImg, num) => {
         "p-0",
         "object-none"
       );
-      const pokeNum = document.createElement("p");
+      const pokeNum = document.createElement("div");
       pokemon.appendChild(pokeNum);
       pokeNum.innerText = (num + 1).toString();
       pokeNum.classList.add(
@@ -25,6 +25,7 @@ const llamarApi = (id, pokeImg, num) => {
         "absolute",
         "items-center",
         "text-center",
+        "italic",
         "my-1",
         "mx-2",
         "w-max",
@@ -57,8 +58,10 @@ for (let i = 0; i < pokemones; i++) {
     "relative",
     "max-[500px]:col-span-full",
     "bg-gray-200",
-    "border-4",
+    "border-2",
     "border-gray-400",
+    "hover:bg-yellow-300",
+    "duration-100",
     "rounded-lg",
     "justify-evenly",
     "place-items-center",
@@ -67,14 +70,26 @@ for (let i = 0; i < pokemones; i++) {
     "text-center",
     "font-bold",
     "text-base",
+    "italic",
     "md:text-2xl",
     "lg:text-4xl",
     "basis-[30%]",
     "p-5"
   );
+  content.style.boxShadow = "4px 4px 0 0 rgba(0,0,0,0.75)";
   let pokeid = `https://pokeapi.co/api/v2/pokemon/${i + 1}`;
   let urlgif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${
     i + 1
   }.gif`;
   llamarApi(pokeid, urlgif, i);
 }
+/*
+console.log(
+  fetch(`https://pokeapi.co/api/v2/pokemon/1`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data.name);
+    })
+    .catch((e) => console.log(e))
+);
+*/
